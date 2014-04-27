@@ -68,4 +68,5 @@ ds.split<-t(simplify2array(by(ds[,-c(1,2)],ds[,c('subject','y')],colMeans)))
 ds.summ<-data.frame(ds.by,ds.split)
 
 write.csv(ds.summ,'ds.summ.csv')
+write.csv(ds,'ds.csv')
 
