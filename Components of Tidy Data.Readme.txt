@@ -1,0 +1,63 @@
+1) The Raw Data
+   - Please find supplied dataset in course's assignment page or at:
+     http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+     
+     Composed of 24 data files, separated by spaces.
+     Each file has, per row, a vriable amount of measurements for 
+     a single variable, for a single subject, for a single activity.
+     Variables are: 
+        X (the time and frequency domain variables, in about 561 measurements), 
+        Subject (the id of the 30 different people used for experiment),
+        Y (the id for the activity performed),
+        body_acc_x (the estimated body acceleration in the x direction),
+        body_acc_y (the estimated body acceleration in the y direction),
+        body_acc_z (the estimated body acceleration in the z direction),
+        body_gyro_x (the angle in the x direction),
+        body_gyro_y (the angle in the y direction),
+        body_gyro_z (the angle in the z direction),
+        total_acc_x (the measured acceleration in the x direction),
+        total_acc_y (the measured acceleration in the y direction),
+        total_acc_z (the measured acceleration in the z direction).
+
+2) The Tidy Dataset
+   - Please find tidy dataset in this github folder as:
+     ds.csv      - the integrated dataset of means and standard deviations for each 
+                   measured variable, with one row per experiment.
+     ds.summ.csv - the summarized dataset with average means and average standard 
+                   deviations for each variable, with one row per subject, per activity.
+
+3) Codebook describing every variable
+   - The variables found in ds.csv are:
+       "subject"          - Numeric ID for the person performing the activity
+       "y"                - Text description of the Activity carried out by subject 
+                            one of: "WALKING" "WALKING_UPSTAIRS" "WALKING_DOWNSTAIRS" 
+                            "SITTING" "STANDING" "LAYING"
+       "x.mean"           - mean for time and frequency domain measurements
+       "x.sd"             - standard deviation for time and frequency domain measutements
+       "body_acc_x.mean"  - mean for estimated body acceleration in x 
+       "body_acc_x.sd"    - standard deviation for estimated body acceleration in x
+       "body_acc_y.mean"  - mean for estimated body acceleration in y
+       "body_acc_y.sd"    - standard deviation for estimated body acceleration in y
+       "body_acc_z.mean"  - mean for estimated body acceleration in z
+       "body_acc_z.sd"    - standard deviation for estimated body acceleration in z
+       "body_gyro_x.mean" - mean for x angle 
+       "body_gyro_x.sd"   - standard deviation for x angle 
+       "body_gyro_y.mean" - mean for y angle
+       "body_gyro_y.sd"   - standard deviation for y angle
+       "body_gyro_z.mean" - mean for z angle
+       "body_gyro_z.sd"   - standard deviation for z angle
+       "total_acc_x.mean" - mean for measured acceleration in x
+       "total_acc_x.sd"   - standard deviation for measured acceleration in x
+       "total_acc_y.mean" - mean for measured acceleration in y
+       "total_acc_y.sd"   - standard deviation for measured acceleration in y
+       "total_acc_z.mean" - mean for measured acceleration in z
+       "total_acc_z.sd"   - standard deviation for measured acceleration in z
+
+4) Process to obtain the tidy dataset
+   - The data was read from the raw text files, one variable at a time, onto data frames 
+     with many columns for all the measurements that were supplied.
+   - These data frames were summarized taking the mean and the standard deviation for each
+     row, ignoring NA values.
+   - The resulting variables were named after the original variable, adding .mean and .sd 
+     as indicators for the mean and the standard deviation.
+
